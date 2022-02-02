@@ -13,8 +13,25 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: SafeArea(
         child: SizedBox.expand(
-          child: Text('data'),
-        ),
+            child: Stack(
+          children: [
+            SizedBox.expand(
+                child: Column(
+              children: [
+                Expanded(
+                  child: Container(
+                    color: Colors.green,
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    color: Colors.yellow,
+                  ),
+                ),
+              ],
+            ))
+          ],
+        )),
       ),
     );
   }
