@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:study_kejuruan/page/video/video_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -50,15 +52,68 @@ class _HomePageState extends State<HomePage> {
                         margin: EdgeInsets.symmetric(horizontal: 20),
                         height: 150,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.grey[200]),
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.lightBlue[300],
+                        ),
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              bottom: -30,
+                              left: -40,
+                              child: Container(
+                                width: 120,
+                                height: 120,
+                                decoration: BoxDecoration(
+                                  color: Colors.lightBlue[500],
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              right: -20,
+                              top: -30,
+                              child: Container(
+                                width: 100,
+                                height: 100,
+                                decoration: BoxDecoration(
+                                  color: Colors.lightBlue[500],
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              width: double.infinity,
+                              height: double.infinity,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  Text(
+                                    'Belajar Lebih Intraktif\ndan Menyenangkan',
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.white),
+                                  ),
+                                  Image.asset(
+                                    'assets/img/belajar.png',
+                                    width: 100,
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
                       )
                     ],
                   ),
                 ),
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.only(top: 20, left: 10, right: 10),
+                    padding: EdgeInsets.only(top: 17, left: 10, right: 10),
                     decoration: BoxDecoration(
                       color: Colors.grey[200],
                       borderRadius: BorderRadius.only(
@@ -69,85 +124,122 @@ class _HomePageState extends State<HomePage> {
                     child: ListView(
                       children: [
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Expanded(
+                            Container(
+                              width: 160,
+                              height: 190,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.book_rounded,
+                                    size: 60,
+                                    color: Colors.amber,
+                                  ),
+                                  SizedBox(
+                                    height: 13,
+                                  ),
+                                  Text(
+                                    'Modul Belajar',
+                                    style: GoogleFonts.poppins(fontSize: 18),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () => Get.to(VideoPage(),
+                                  transition: Transition.rightToLeft),
                               child: Container(
-                                margin: EdgeInsets.all(10.0),
-                                height: 200,
+                                width: 160,
+                                height: 190,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(20),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black26,
-                                      offset: Offset.zero,
-                                      spreadRadius: 1,
-                                      blurRadius: 7,
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.video_camera_front,
+                                      size: 60,
+                                      color: Colors.green,
+                                    ),
+                                    SizedBox(
+                                      height: 13,
+                                    ),
+                                    Text(
+                                      'Video Belajar',
+                                      style: GoogleFonts.poppins(fontSize: 18),
                                     ),
                                   ],
                                 ),
                               ),
                             ),
-                            Expanded(
-                              child: Container(
-                                margin: EdgeInsets.all(10),
-                                height: 200,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black26,
-                                      offset: Offset.zero,
-                                      spreadRadius: 1,
-                                      blurRadius: 7,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            )
                           ],
                         ),
+                        SizedBox(
+                          height: 20,
+                        ),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Expanded(
-                              child: Container(
-                                margin: EdgeInsets.all(10.0),
-                                height: 200,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black26,
-                                      offset: Offset.zero,
-                                      spreadRadius: 1,
-                                      blurRadius: 7,
-                                    ),
-                                  ],
-                                ),
+                            Container(
+                              width: 160,
+                              height: 190,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.storage_rounded,
+                                    size: 60,
+                                    color: Colors.red,
+                                  ),
+                                  SizedBox(
+                                    height: 13,
+                                  ),
+                                  Text(
+                                    'Play AR',
+                                    style: GoogleFonts.poppins(fontSize: 18),
+                                  ),
+                                ],
                               ),
                             ),
-                            Expanded(
-                              child: Container(
-                                margin: EdgeInsets.all(10),
-                                height: 200,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black26,
-                                      offset: Offset.zero,
-                                      spreadRadius: 1,
-                                      blurRadius: 7,
-                                    ),
-                                  ],
-                                ),
+                            Container(
+                              width: 160,
+                              height: 190,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20),
                               ),
-                            )
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.bookmarks_rounded,
+                                    size: 60,
+                                    color: Colors.indigo,
+                                  ),
+                                  SizedBox(
+                                    height: 13,
+                                  ),
+                                  Text(
+                                    'Rangkuman',
+                                    style: GoogleFonts.poppins(fontSize: 18),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ],
-                        )
+                        ),
                       ],
                     ),
                   ),

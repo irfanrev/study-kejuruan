@@ -40,7 +40,7 @@ class StarterPage extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              Get.to(HomePage(), transition: Transition.fadeIn);
+              Get.to(HomePage(), transition: Transition.rightToLeft);
             },
             style: ElevatedButton.styleFrom(
               primary: Colors.indigo,
