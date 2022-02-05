@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:study_kejuruan/page/modul/modul_belajar_page.dart';
 import 'package:study_kejuruan/page/video/video_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -126,29 +127,33 @@ class _HomePageState extends State<HomePage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Container(
-                              width: 160,
-                              height: 190,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.book_rounded,
-                                    size: 60,
-                                    color: Colors.amber,
-                                  ),
-                                  SizedBox(
-                                    height: 13,
-                                  ),
-                                  Text(
-                                    'Modul Belajar',
-                                    style: GoogleFonts.poppins(fontSize: 18),
-                                  ),
-                                ],
+                            InkWell(
+                              onTap: () => Get.to(ModulBelajar(),
+                                  transition: Transition.rightToLeft),
+                              child: Container(
+                                width: 160,
+                                height: 190,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.book_rounded,
+                                      size: 60,
+                                      color: Colors.amber,
+                                    ),
+                                    SizedBox(
+                                      height: 13,
+                                    ),
+                                    Text(
+                                      'Modul Belajar',
+                                      style: GoogleFonts.poppins(fontSize: 18),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                             InkWell(

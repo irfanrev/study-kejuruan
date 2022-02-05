@@ -28,7 +28,9 @@ class _VideoDetailState extends State<VideoDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.lightBlue,
+      ),
       body: YoutubePlayer(
         controller: _controller!,
         showVideoProgressIndicator: true,
