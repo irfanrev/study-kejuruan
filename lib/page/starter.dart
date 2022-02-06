@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 import 'package:study_kejuruan/page/home/home_page.dart';
 
 class StarterPage extends StatelessWidget {
@@ -14,9 +15,9 @@ class StarterPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: 200,
-            height: 200,
-            color: Colors.grey[100],
+            width: 250,
+            height: 250,
+            child: Lottie.asset('assets/img/ar.json'),
           ),
           SizedBox(
             height: 20.0,
@@ -43,7 +44,7 @@ class StarterPage extends StatelessWidget {
               Get.to(HomePage(), transition: Transition.rightToLeft);
             },
             style: ElevatedButton.styleFrom(
-              primary: Colors.indigo,
+              primary: Colors.lightBlue[400],
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30),
               ),
@@ -52,7 +53,8 @@ class StarterPage extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 40, vertical: 17),
               child: Text(
                 'Get Started',
-                style: GoogleFonts.poppins(fontSize: 18),
+                style: GoogleFonts.poppins(
+                    fontSize: 18, fontWeight: FontWeight.w500),
               ),
             ),
           ),
