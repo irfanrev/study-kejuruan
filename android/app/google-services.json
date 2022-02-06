@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1016705501408",
+    "project_id": "study-kejuruan",
+    "storage_bucket": "study-kejuruan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1016705501408:android:85a3b379ce8a4bf02ca885",
+        "android_client_info": {
+          "package_name": "com.example.study_kejuruan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1016705501408-4gnbr636a9egh1osjr6v47k4ihklg6er.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.study_kejuruan",
+            "certificate_hash": "103802335f4f9457af8ad51455fdb9f465b34909"
+          }
+        },
+        {
+          "client_id": "1016705501408-961eqardi2nhvhmtrktd4vinihgku9d2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYSRksIndbourv8NnHkV7883BTj3hRZmU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1016705501408-961eqardi2nhvhmtrktd4vinihgku9d2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
