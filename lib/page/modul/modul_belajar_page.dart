@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:study_kejuruan/page/modul/modul_belajar_detail.dart';
 import 'package:study_kejuruan/services/supabase_handler.dart';
+import 'package:supabase/supabase.dart';
 
 class ModulBelajar extends StatefulWidget {
   const ModulBelajar({Key? key}) : super(key: key);
@@ -12,10 +15,14 @@ class ModulBelajar extends StatefulWidget {
 class _ModulBelajarState extends State<ModulBelajar> {
   SupabaseHandler supabaseHandler = SupabaseHandler();
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
+  final client = SupabaseClient("https://zihnfklojdputvfpemhz.supabase.co",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjQ0MDQ4MTA1LCJleHAiOjE5NTk2MjQxMDV9.vk0sMC3ZWyu8ck5Jwb96zdbE_wjS2HU0Cc923WUrv7o");
+
+  Future<dynamic> getData() async {
+    final response = await client.from('book').select().execute();
+    print(response);
+    dynamic data = response.data;
+    return data;
   }
 
   @override
@@ -28,22 +35,25 @@ class _ModulBelajarState extends State<ModulBelajar> {
           centerTitle: true,
           title: Text('Modul Belajar'),
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-          child: FutureBuilder<List<dynamic>>(
-            future: supabaseHandler.getData(),
-            builder: (_, snapshot) {
-              if (snapshot.connectionState == ConnectionState.none) {
-                return Center(
-                  child: CircularProgressIndicator(),
-                );
-              } else {
-                return ListView.builder(
-                  itemCount: snapshot.data!.length,
-                  itemBuilder: (_, index) {
-                    return Container(
+        body: FutureBuilder<dynamic>(
+          future: getData(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            } else {
+              return ListView.builder(
+                itemCount: snapshot.data!.length,
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: () => Get.to(
+                        ModulDetail(ebook: snapshot.data![index]['pdf']),
+                        transition: Transition.fadeIn),
+                    child: Container(
                       width: MediaQuery.of(context).size.width,
                       height: 200,
+                      margin: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                       padding: EdgeInsets.symmetric(
                           horizontal: 15.0, vertical: 15.0),
                       decoration: BoxDecoration(
@@ -114,12 +124,12 @@ class _ModulBelajarState extends State<ModulBelajar> {
                           )
                         ],
                       ),
-                    );
-                  },
-                );
-              }
-            },
-          ),
+                    ),
+                  );
+                },
+              );
+            }
+          },
         ));
   }
 }
