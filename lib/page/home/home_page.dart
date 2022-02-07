@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:study_kejuruan/page/ar/home_reality.dart';
 import 'package:study_kejuruan/page/modul/modul_belajar_page.dart';
 import 'package:study_kejuruan/page/video/video_page.dart';
 
@@ -193,29 +194,32 @@ class _HomePageState extends State<HomePage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Container(
-                              width: 160,
-                              height: 190,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.storage_rounded,
-                                    size: 60,
-                                    color: Colors.red,
-                                  ),
-                                  SizedBox(
-                                    height: 13,
-                                  ),
-                                  Text(
-                                    'Play AR',
-                                    style: GoogleFonts.poppins(fontSize: 18),
-                                  ),
-                                ],
+                            InkWell(
+                              onTap: () => Get.to(HomeAr(), transition: Transition.rightToLeft),
+                              child: Container(
+                                width: 160,
+                                height: 190,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.storage_rounded,
+                                      size: 60,
+                                      color: Colors.red,
+                                    ),
+                                    SizedBox(
+                                      height: 13,
+                                    ),
+                                    Text(
+                                      'Play AR',
+                                      style: GoogleFonts.poppins(fontSize: 18),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                             Container(
