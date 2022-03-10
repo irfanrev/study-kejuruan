@@ -15,8 +15,8 @@ class ModulBelajar extends StatefulWidget {
 class _ModulBelajarState extends State<ModulBelajar> {
   SupabaseHandler supabaseHandler = SupabaseHandler();
 
-  final client = SupabaseClient("https://zihnfklojdputvfpemhz.supabase.co",
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjQ0MDQ4MTA1LCJleHAiOjE5NTk2MjQxMDV9.vk0sMC3ZWyu8ck5Jwb96zdbE_wjS2HU0Cc923WUrv7o");
+  final client = SupabaseClient("https://lihepmmyxgmkuppbsxqm.supabase.co",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpaGVwbW15eGdta3VwcGJzeHFtIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY0NjkxMDY2NiwiZXhwIjoxOTYyNDg2NjY2fQ.TGtMbDYP_vI-Zliy6HU0hi09SBGG5_VsVhcg2Ta1o8E");
 
   Future<dynamic> getData() async {
     final response = await client.from('book').select().execute();
